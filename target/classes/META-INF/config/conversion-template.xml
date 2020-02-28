@@ -1,13 +1,48 @@
-<?xml version="1.0"?>
-<smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd"
-                      xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <!--
-    Filter the message using the SAX Filter (i.e. not DOM, so no
-    intermediate DOM for the "complete" message - there are "mini" DOMs
-    for the NodeModels below)....
-    -->
-    <params>
-        <param name="stream.filter.type">SAX</param>
-        <param name="default.serialization.on">false</param>
-    </params>
+<medi:edimap xmlns:medi="http://www.milyn.org/schema/edi-message-mapping-1.0.xsd">
+	<medi:description name="PD 852" version="1.0" />
+  	<medi:delimiters segment="&#10;" field="~" component=">" sub-component="" />
+  	
+  	<medi:segments xmltag="Main">
+
+    <medi:segment segcode="ST" xmltag="ST_Parent">
+      <medi:field xmltag="ST_1" />
+      <medi:field xmltag="ST_2" />
+    </medi:segment>
+  	
+  	<medi:segment segcode="W15" xmltag="W15_Parent">
+      <medi:field xmltag="W15_1" />
+      <medi:field xmltag="W15_2" />
+    </medi:segment>
+    
+    <medi:segment segcode="N1" xmltag="N1_Parent">
+      <medi:field xmltag="N1_1" />
+      <medi:field xmltag="N1_2" />
+      <medi:field xmltag="N1_3" />
+      <medi:field xmltag="N1_4" />
+    </medi:segment>
+    
+    <medi:segment segcode="G62" xmltag="G62_Parent">
+      <medi:field xmltag="G62_1" />
+      <medi:field xmltag="G62_2" />
+    </medi:segment>
+    
+    <medi:segment segcode="W19" xmltag="W19_Parent">
+      <medi:field xmltag="W19_1" />
+      <medi:field xmltag="W19_2" />
+      <medi:field xmltag="W19_3" />
+      <medi:field xmltag="W19_4" />
+      <medi:field xmltag="W19_5" />
+      <medi:field xmltag="W19_6" />
+    </medi:segment>
+    
+    
+    <medi:segment segcode="SE" xmltag="SE_Parent">
+      <medi:field xmltag="SE_1" />
+      <medi:field xmltag="SE_2" />
+    </medi:segment>
+	
+	</medi:segments>
+	
+</medi:edimap>
