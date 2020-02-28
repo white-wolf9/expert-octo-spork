@@ -14,7 +14,7 @@ public class Main {
 		try {
 			camelContext.addRoutes(ediToXmlRoute);
 			camelContext.start();
-			Thread.sleep(6000);
+			Thread.sleep(4000);
 			camelContext.stop();
 		} catch (InterruptedException e) {
 			System.out.println("Error!");
