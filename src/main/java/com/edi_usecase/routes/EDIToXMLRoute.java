@@ -25,7 +25,7 @@ public class EDIToXMLRoute extends RouteBuilder {
 		//	Using the key value pairs in the properties file to form the kafka path
 		String toKafka = new StringBuilder().append(properties.getProperty("kafkaserver")).append("?").append(properties.getProperty("topicname")).append("&")
 				.append(properties.getProperty("zooKeeperhost")).append("&").append(properties.getProperty("serializerclass")).toString();
-		//	Using the key value pairs in the properties file to get the input folder
+		//	Using the key value pairs in the properties file to form the kafka path
 		from(properties.getProperty("ediinput")).to("smooks://smooks-config.xml")
 		.to((String)"xslt:transform.xslt").to(toKafka);
 		
